@@ -7,11 +7,16 @@ import numpy as np
 
 
 def 活性化(z):
-    return(np.tanh(z))
+    if z>=0:
+        return z
+    else:
+        return 0
 
 def back活性化(前):
-    return(1/np.square(np.cosh(前)))
-
+    if 前>=0:
+        return 1
+    else:
+        return 0
 
 def 全結合(W,X):
     z = np.dot(W,X)
